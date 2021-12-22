@@ -12,7 +12,7 @@ sudo apt-get install python3-pip python3-apt
 pip3 install -U setuptools
 pip3 install -U colcon-common-extensions colcon-ros-bundle
 ```
-</br>
+
 * configure the application
 ```sh
 cd ~/environment
@@ -28,7 +28,7 @@ echo "source ~/environment/aws-robomaker-mini-pupper-application/robot_ws/instal
 echo "source ~/environment/aws-robomaker-mini-pupper-application/simulation_ws/install/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-</br>
+
 * create bucket
 create S3 buckets for mini pupper</br>
 [check this link](https://s3.console.aws.amazon.com/s3/bucket/create?region=ap-northeast-1)</br>
@@ -42,7 +42,7 @@ aws s3api put-object --bucket mini-pupper-bucket --key mnpp_robot.tar --body out
 cd ~/environment/aws-robomaker-mini-pupper-application/simulation_ws/bundle
 aws s3api put-object --bucket mini-pupper-bucket --key mnpp_sim.tar --body output.tar
 ```
-</br>
+
 ## 3. create robot application
 return to robomaker console</br>
 then create a new robot application</br>
@@ -53,7 +53,7 @@ set "application" to "provide a colcon-bundled source file"</br>
 and then click "browse S3"</br>
 choose "mini-pupper-bucket/mnpp_robot.tar"</br>
 then click "create"</br>
-</br>
+
 ## 4. create simulation application
 return to robomaker console</br>
 then create a new simulation application</br>
@@ -64,7 +64,7 @@ set "application" to "provide a colcon-bundled source file"</br>
 and then click "browse S3"</br>
 choose "mini-pupper-bucket/mnpp_sim.tar"</br>
 then click "create"</br>
-</br>
+
 ## 5. create simulation job
 return to robomaker console</br>
 then create a new simulation job</br>
@@ -74,32 +74,32 @@ in section "simulation job details"</br>
 set "simulation job duration" to 1 hour(for saving money)</br>
 set "robot software suite" to "Melodic"</br>
 set "IAM role" to whatever you want</br>
-</br>
+
 in section "simulation job output"</br>
 click "browse S3"</br>
 choose "mini-pupper-bucket"</br>
-</br>
+
 * step 2
 in section "choose method"</br>
 click "select existing application"</br>
-</br>
+
 in section "robot application"</br>
 choose "mini-pupper-robot"</br>
-</br>
+
 in section "robot application configuration"</br>
 set "launch package name" to "hello_world_robot"</br>
 set "launch file" to "rotate.launch"</br>
-</br>
+
 * step 3
 in section "choose method"</br>
 click "select existing application"</br>
-</br>
+
 in section "robot application"</br>
 choose "mini-pupper-simulation"</br>
-</br>
+
 in section "robot application configuration"</br>
 set "launch package name" to "mini_pupper"</br>
 set "launch file" to "gazebo.launch"</br>
-</br>
+
 * step 4
 just click "create"</br>
