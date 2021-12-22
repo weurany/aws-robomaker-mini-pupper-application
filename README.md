@@ -6,6 +6,8 @@ remember to set "pre-installed robot software suite" to "Melodic"</br>
 </br>
 ## 2. configure your development environment
 * install colcon
+
+
 ```sh
 sudo apt-get update
 sudo apt-get install python3-pip python3-apt
@@ -14,6 +16,8 @@ pip3 install -U colcon-common-extensions colcon-ros-bundle
 ```
 
 * configure the application
+
+
 ```sh
 cd ~/environment
 git colne https://github.com/0nhc/aws-robomaker-mini-pupper-application.git
@@ -30,11 +34,15 @@ source ~/.bashrc
 ```
 
 * create bucket
+
+
 create S3 buckets for mini pupper</br>
 [check this link](https://s3.console.aws.amazon.com/s3/bucket/create?region=ap-northeast-1)</br>
 set "bucket name" to "mini-pupper-bucket"</br>
-</br>
+
 * upload bundled file to bucket
+
+
 return to aws development environment</br>
 ```sh
 cd ~/environment/aws-robomaker-mini-pupper-application/robot_ws/bundle
@@ -69,7 +77,10 @@ then click "create"</br>
 return to robomaker console</br>
 then create a new simulation job</br>
 [check this link](https://ap-northeast-1.console.aws.amazon.com/robomaker/home?region=ap-northeast-1#simulationJobs/new)</br>
+
 * step 1
+
+
 in section "simulation job details"</br>
 set "simulation job duration" to 1 hour(for saving money)</br>
 set "robot software suite" to "Melodic"</br>
@@ -80,6 +91,8 @@ click "browse S3"</br>
 choose "mini-pupper-bucket"</br>
 
 * step 2
+
+
 in section "choose method"</br>
 click "select existing application"</br>
 
@@ -91,6 +104,8 @@ set "launch package name" to "hello_world_robot"</br>
 set "launch file" to "rotate.launch"</br>
 
 * step 3
+
+
 in section "choose method"</br>
 click "select existing application"</br>
 
@@ -102,4 +117,6 @@ set "launch package name" to "mini_pupper"</br>
 set "launch file" to "gazebo.launch"</br>
 
 * step 4
+
+
 just click "create"</br>
