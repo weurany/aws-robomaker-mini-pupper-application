@@ -20,7 +20,7 @@ pip3 install -U colcon-common-extensions colcon-ros-bundle
 
 ```sh
 cd ~/environment
-git colne https://github.com/0nhc/aws-robomaker-mini-pupper-application.git
+git colne --recursive https://github.com/0nhc/aws-robomaker-mini-pupper-application.git
 cd robot_ws
 colcon build
 colcon bundle
