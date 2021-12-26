@@ -91,6 +91,7 @@ set "IAM role" to whatever you want</br>
 in section "simulation job output"</br>
 click "browse S3"</br>
 choose "mini-pupper-bucket"</br>
+just click "Next"</br>
 
 * step 2
 
@@ -104,6 +105,7 @@ choose "mini-pupper-robot"</br>
 in section "robot application configuration"</br>
 set "launch package name" to "hello_world_robot"</br>
 set "launch file" to "rotate.launch"</br>
+just click "Next"</br>
 
 * step 3
 
@@ -111,12 +113,13 @@ set "launch file" to "rotate.launch"</br>
 in section "choose method"</br>
 click "select existing application"</br>
 
-in section "robot application"</br>
+in section "Simulation application"</br>
 choose "mini-pupper-simulation"</br>
 
-in section "robot application configuration"</br>
+in section "Simulation application configuration"</br>
 set "launch package name" to "mini_pupper"</br>
 set "launch file" to "gazebo.launch"</br>
+just click "Next"</br>
 
 * step 4
 
